@@ -6,17 +6,12 @@ const bodyParser = require('body-parser')
 
 const setupAndstartServer =  async() =>{
 
-    const app = express();
-    app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({extended : true}));
-
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended : true}));
 
     app.listen( PORT , async ()=>{
         console.log(`server is started at ${PORT}`);
-
-       const repo =  new CityRepository();
-       repo.createCity ({ name : "aegd"});
-       
     })
 }
 
